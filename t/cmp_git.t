@@ -1,10 +1,11 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::NoWarnings;
 
 use Git::Version::Compare qw( cmp_git );
 
-plan tests => 2;
+plan tests => 3;
 
 is_deeply(
     [

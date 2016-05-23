@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::NoWarnings;
 
 use List::Util qw( sum shuffle );
 use Git::Version::Compare qw( :all );
@@ -131,8 +132,8 @@ my @random = ( "$random.rc1", $random );
 
 # the actual tests
 plan tests => plan_for( \@sorted ) + plan_for( \@random )    # all sorted lists
-  + 7 * sum map @$_ * @$_, @same    # all comparisons with all siblings
-  ;
+  + 7 * sum( map @$_ * @$_, @same )    # all comparisons with all siblings
+  + 1;                                 # Test::NoWarnings
 
 test_sorted( \@sorted );
 test_sorted( \@random );
