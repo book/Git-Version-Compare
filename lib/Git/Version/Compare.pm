@@ -76,7 +76,7 @@ sub _normalize {
     Carp::croak "$v does not look like a Git version" if !looks_like_git($v);
 
     # reformat git.git tag names, output of `git --version`
-    $v =~ s/^v|^git version |\.msysgit.*|[\012\015]+\z//g;
+    $v =~ s/^v|^git version |\.[a-zA-Z]+\..*|[\012\015]+\z//g;
     $v =~ y/-/./;
     $v =~ s/0rc/0.rc/;
     ($v) = split / /, $v;    # drop anything after the version
