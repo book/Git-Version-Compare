@@ -85,8 +85,12 @@ my @sorted = (
     '1.7.1.1',                '1.7.1.1.1.g66bd8ab',
     '1.7.2.rc0',              '1.7.2.rc0.1.g078e',
     '1.7.2.rc0.10.g1ba5c',    '1.7.2.rc0.13.gc9eaaa',
+    '1.9.4.msysgit.0',
+    'git version 1.9.5.msysgit.1',
     'git version 2.6.4 (Apple Git-63)',
-    'git version 2.8.0.rc3',  'v2.8.0.2',
+    'git version 2.8.0.rc3',
+    'git version 2.8.0.windows.1',
+    'v2.8.0.2',
 );
 
 my @same = (
@@ -100,6 +104,7 @@ my @same = (
     [ '1.7.2.rc0.13.gc9eaaa',             '1.7.2.rc0.13.gc9eaaa' ],
     [ 'git version 2.6.4 (Apple Git-63)', '2.6.4' ],
     [ 'git version 2.7.0', '2.7', '2.7.0', '2.7.0.0' ],
+    [ 'git version 2.8.0.windows.1',      'git version 2.8.0'],
 );
 
 # pick up a random git version
