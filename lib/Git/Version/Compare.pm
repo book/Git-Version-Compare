@@ -3,9 +3,7 @@ package Git::Version::Compare;
 use strict;
 use warnings;
 use Exporter;
-use Carp;
-
-use namespace::clean;
+use Carp ();
 
 my @ops = qw( lt gt le ge eq ne );
 
@@ -75,7 +73,7 @@ sub _normalize {
     return undef if !defined $v;
 
     # minimal consistency check
-    croak "$v does not look like a Git version" if !looks_like_git($v);
+    Carp::croak "$v does not look like a Git version" if !looks_like_git($v);
 
     # reformat git.git tag names, output of `git --version`
     $v =~ s/^v|^git version |\.msysgit.*|[\012\015]+\z//g;
