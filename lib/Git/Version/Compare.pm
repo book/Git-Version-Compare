@@ -62,7 +62,7 @@ sub looks_like_git {
     return scalar $_[0] =~
         /^(?:v|git\ version\ )?                               # prefix
           [0-9]+(?:[.-](?:0[ab]?|[1-9][0-9a-z]*|[a-zA-Z]+))*  # x.y.z.*
-          (?:[.-]?rc[0-9]+)?                                  # rc
+          (?:[.-]?[a-z]+[0-9]+)?                              # rc or vendor specific suffixes
           (?:[.-](GIT|[1-9][0-9]*[.-]g[A-Fa-f0-9]+))?         # devel
           (?:\ .*)?                                           # comment
          $/x;
@@ -208,6 +208,10 @@ A Git-aware version of the C<cmp> operator.
 Given a string, returns true if it looks like a Git version number
 (and can therefore be parsed by C<Git::Version::Number>) and false
 otherwise.
+
+It accepts the version strings from all standard Git versions and from some
+non-standard Gits as well, such as GitLab's embedded Git which uses a special
+suffix like C<.gl1>.
 
 =head1 EXPORT TAGS
 
