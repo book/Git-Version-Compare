@@ -310,7 +310,7 @@ scripts that need B<git>.
 
 =head1 COPYRIGHT
 
-Copyright 2016 Philippe Bruhat (BooK), all rights reserved.
+Copyright 2016-2023 Philippe Bruhat (BooK), all rights reserved.
 
 =head1 LICENSE
 
